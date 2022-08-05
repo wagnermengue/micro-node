@@ -1,3 +1,4 @@
+import {} from './bootstrap';
 import {ApplicationConfig, MicroNodeApplication} from './application';
 
 export * from './application';
