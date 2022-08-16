@@ -14,6 +14,7 @@ async function exportOpenApiSpec(): Promise<void> {
   const outFile = process.argv[2] ?? '';
   const app = new MicroNodeApplication(config);
   await app.boot();
+  // @ts-ignore
   await app.exportOpenApiSpec(outFile);
 }
 
