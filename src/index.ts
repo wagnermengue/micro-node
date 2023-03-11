@@ -1,4 +1,4 @@
-import {} from './bootstrap';
+import './bootstrap';
 import {ApplicationConfig, MicroNodeApplication} from './application';
 import {RestServer} from "@loopback/rest";
 
@@ -19,6 +19,7 @@ export async function main(options: ApplicationConfig = {}) {
 
 if (require.main === module) {
   // Run the application
+  console.log(process.env.RABBITMQ_URI);
   const config = {
     rest: {
       port: +(process.env.PORT ?? 3000),
@@ -33,6 +34,9 @@ if (require.main === module) {
         // useful when used with OpenAPI-to-GraphQL to locate your application
         setServersFromRequest: true,
       },
+    },
+    rabbitmq: {
+      uri: process.env.RABBITMQ_URI
     },
   };
   main(config).catch(err => {
