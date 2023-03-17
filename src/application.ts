@@ -43,8 +43,4 @@ export class MicroNodeApplication extends BootMixin(
 
     this.servers([RabbitmqServer])
   }
-
-  async boot() {
-
-  }
 }
