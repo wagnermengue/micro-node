@@ -36,7 +36,8 @@ if (require.main === module) {
       },
     },
     rabbitmq: {
-      uri: process.env.RABBITMQ_URI
+      uri: process.env.RABBITMQ_URI,
+      defaultHandlerError: process.env.RABBITMQ_HANDLER_ERROR
     },
   };
   main(config).catch(err => {
